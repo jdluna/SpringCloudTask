@@ -1,0 +1,2 @@
+# SpringCloudTask
+Spring based task
