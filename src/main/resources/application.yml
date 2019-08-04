@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: springcloudtask
+  cloud:
+    config:
+      failFast: false
+      uri: http://cloudconfig:8888
+
+server:
+  port: ${PORT:8101}
+
+feign:
+  hystrix:
+    enabled: false    
