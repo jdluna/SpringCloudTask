@@ -6,7 +6,6 @@ pipeline {
   environment {
     LOGSTASH = 'nuc:5044'
   }
-  options { buildDiscarder(logRotator(numToKeepStr: '1')) }
   stages {
     stage('Git') {
       steps {
