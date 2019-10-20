@@ -1,8 +1,9 @@
 package com.wlanboy.cloudtask.tasks;
 
 import java.util.Date;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
@@ -12,7 +13,7 @@ import org.springframework.cloud.task.repository.TaskExecution;
 
 public class SimpleJobFirstTask implements Tasklet, TaskExecutionListener {
 
-	private static final Logger logger = Logger.getLogger(SimpleJobFirstTask.class.getCanonicalName());
+	private static final Logger logger = LoggerFactory.getLogger(SimpleJobFirstTask.class.getCanonicalName());
 
 	@Override
 	public RepeatStatus execute(StepContribution contribution, ChunkContext context) throws Exception {

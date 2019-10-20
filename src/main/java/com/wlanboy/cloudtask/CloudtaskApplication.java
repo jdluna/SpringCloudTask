@@ -19,7 +19,7 @@ public class CloudtaskApplication {
 
 	public static void main(String[] args) {
 		ArrayList<String> scripts = new ArrayList<String>(Arrays.asList(args));
-		scripts.add("time=" + new Long(System.currentTimeMillis()));
+		scripts.add("time=" + System.currentTimeMillis());
 		SpringApplication.run(CloudtaskApplication.class, scripts.stream().toArray(String[]::new));
 	}
 
