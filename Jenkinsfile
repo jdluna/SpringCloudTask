@@ -23,6 +23,11 @@ pipeline {
         sh 'mvn clean package -Dmaven.test.failure.ignore=true'
       }
     }
+    stage('Container') {
+      steps {
+        sh 'docker build -t cloudtask:latest . --build-arg JAR_FILE=./target/cloudtask-0.0.2-SNAPSHOT.jar'
+      }
+    }
     stage('Publish') {
       when { expression { params.PUBLISHIMAGE == true } }
       steps {
